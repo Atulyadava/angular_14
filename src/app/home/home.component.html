@@ -1,0 +1,9 @@
+<div [ngStyle]="stylevalue">{{name | uppercase}}</div>
+<h3 [ngClass]="className">my selery is {{salary | currency:'INR'}}</h3>
+
+<button (click)="lotes('click on ok')">click me</button>
+<br>
+<input [value]="isActive" [disabled]="isActive" #text (change)="lotes(text.value)">
+<br>
+<input [(ngModel)]="name">
+

@@ -1,0 +1,60 @@
+
+<form #playerform="ngForm" (submit)="addPlayaer(playerform.value)">
+    <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" class="form-control" name="id" ngModel>
+      </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="role">Role</label>
+        <input type="text" class="form-control" name="role" ngModel>
+    </div>
+    <button class="btn btn-primary" >Add</button>
+</form>
+
+<h2>Get player By id </h2>
+
+    <form >
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter player id" #id>
+        <button class="btn btn-dark" (click)="playerDelails(id.value)">search</button>
+        </div>
+    </form>
+   
+<br>
+<table class="table table-striped" style="width: 500px;">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">pasword</th>
+        <th scope="col">role</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        <th scope="col"> add in to team </th>
+        
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let p of mydata; index as i">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.password}}</td>
+        <td>{{p.role}}</td>
+        <td><button class="btn btn-success" (click)="editPlayer(p.id)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deletePLayer(i)">delete</button></td>
+        <td><button class="btn btn-success" (click)="addToTeam(i)">Add to team</button></td>
+      </tr>
+    
+    </tbody>
+  </table>
+  
+
+
